@@ -15,8 +15,10 @@ function createEmployeeRecord([firstName, familyName, title, payPerHour]) {
     return employeeObj;
 }
 
+
 function createEmployeeRecords(arrays) {
     const employeeRecords = [];
+
     arrays.forEach(employee => {
         // console.log(employee);
         const record = createEmployeeRecord(employee)
@@ -26,4 +28,23 @@ function createEmployeeRecords(arrays) {
     return employeeRecords;
 }
 
-createEmployeeRecords([['Bob', 'Wilson', 'Admiral', 35], ['Jon', 'Brannom', 'Captain', 30]])
+// console.log(createEmployeeRecords([['Bob', 'Wilson', 'Admiral', 35], ['Jon', 'Brannom', 'Captain', 30]]));
+
+function createTimeInEvent(employee, dateStamp) {
+    const [date, hour] = dateStamp.split(' ');
+
+    // employee.forEach(e => {
+
+    employee.timeInEvents = [{
+        'type': 'TimeIn',
+        'hour': parseInt(hour, 10),
+        'date': date,
+    }]
+    // })
+
+    // console.log(employee);
+    return employee;
+
+}
+
+// console.log(createTimeInEvent(employeeRecords, '2025-02-02 1500'));
