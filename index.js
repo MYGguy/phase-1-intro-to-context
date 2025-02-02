@@ -1,3 +1,5 @@
+const testEmployees = [['Bob', 'Wilson', 'Admiral', 35], ['Jon', 'Brannom', 'Captain', 30]];
+
 function createEmployeeRecord([firstName, familyName, title, payPerHour]) {
     let timeInEvents = [];
     let timeOutEvents = [];
@@ -47,4 +49,22 @@ function createTimeInEvent(employee, dateStamp) {
 
 }
 
+function createTimeOutEvent(employee, dateStamp) {
+    const [date, hour] = dateStamp.split(' ');
+
+    // employee.forEach(e => {
+
+    employee.timeOutEvents = [{
+        'type': 'TimeOut',
+        'hour': parseInt(hour, 10),
+        'date': date,
+    }]
+    // })
+
+    // console.log(employee);
+    return employee;
+
+}
+
 // console.log(createTimeInEvent(employeeRecords, '2025-02-02 1500'));
+// console.log(createTimeOutEvent(testEmployees[0], '2025-02-02 2000'));
