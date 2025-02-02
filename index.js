@@ -59,11 +59,17 @@ function createTimeOutEvent(employee, dateStamp) {
     return employee;
 
 }
-
+//Bob
 createTimeInEvent(testEmployees[0], '2025-02-02 0900');
 createTimeOutEvent(testEmployees[0], '2025-02-02 1100');
 createTimeInEvent(testEmployees[0], '2025-02-03 0900');
 createTimeOutEvent(testEmployees[0], '2025-02-03 1700');
+
+//Jon
+createTimeInEvent(testEmployees[1], '2025-02-02 0600');
+createTimeOutEvent(testEmployees[1], '2025-02-02 1000');
+createTimeInEvent(testEmployees[1], '2025-02-03 0600');
+createTimeOutEvent(testEmployees[1], '2025-02-03 1600');
 
 console.log(testEmployees[0]);
 
@@ -105,7 +111,20 @@ function allWagesFor(employeeObj) {
 }
 
 // console.log(allWagesFor(testEmployees[0]));
-allWagesFor(testEmployees[0]);
+// allWagesFor(testEmployees[0]);
+
+function calculatePayroll(arrayOfEmployees) {
+    let allWages = 0;
+
+    arrayOfEmployees.map(employee => {
+        const paymentOwedForSingleEmployee = allWagesFor(employee);
+        allWages += paymentOwedForSingleEmployee;
+    })
+    return allWages;
+
+}
+
+// console.log(calculatePayroll(testEmployees));
 
 
 // console.log(hoursWorkedOnDate(testEmployees[0], '2025-02-02'));
