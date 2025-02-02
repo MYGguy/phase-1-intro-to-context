@@ -60,10 +60,10 @@ function createTimeOutEvent(employee, dateStamp) {
 
 }
 
-// createTimeInEvent(testEmployees[0], '2025-02-02 0900');
-// createTimeOutEvent(testEmployees[0], '2025-02-02 1100');
-// createTimeInEvent(testEmployees[0], '2025-02-03 0900');
-// createTimeOutEvent(testEmployees[0], '2025-02-03 1700');
+createTimeInEvent(testEmployees[0], '2025-02-02 0900');
+createTimeOutEvent(testEmployees[0], '2025-02-02 1100');
+createTimeInEvent(testEmployees[0], '2025-02-03 0900');
+createTimeOutEvent(testEmployees[0], '2025-02-03 1700');
 
 console.log(testEmployees[0]);
 
@@ -85,6 +85,13 @@ function hoursWorkedOnDate(employeeObj, dateStamp) {
     return hours;
 
 }
+
+function wagesEarnedOnDate(employeeObj, dateStamp) {
+    return hoursWorkedOnDate(employeeObj, dateStamp) * employeeObj.payPerHour;
+}
+
+// console.log(wagesEarnedOnDate(testEmployees[0], '2025-02-03'));
+
 
 // console.log(hoursWorkedOnDate(testEmployees[0], '2025-02-02'));
 // console.log(hoursWorkedOnDate(testEmployees[0], '2025-02-03'));
