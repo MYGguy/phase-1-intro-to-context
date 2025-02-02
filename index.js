@@ -92,6 +92,21 @@ function wagesEarnedOnDate(employeeObj, dateStamp) {
 
 // console.log(wagesEarnedOnDate(testEmployees[0], '2025-02-03'));
 
+function allWagesFor(employeeObj) {
+    let paymentOwed = 0;
+    employeeObj.timeInEvents.forEach(event => {
+        // console.log(event.date);
+        // console.log(wagesEarnedOnDate(employeeObj, event.date));
+        paymentOwed += wagesEarnedOnDate(employeeObj, event.date);
+    })
+    // console.log(paymentOwed);
+
+    return paymentOwed;
+}
+
+// console.log(allWagesFor(testEmployees[0]));
+allWagesFor(testEmployees[0]);
+
 
 // console.log(hoursWorkedOnDate(testEmployees[0], '2025-02-02'));
 // console.log(hoursWorkedOnDate(testEmployees[0], '2025-02-03'));
